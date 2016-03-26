@@ -16,5 +16,11 @@
     "psr-0": {
       "Darkin1\\Intercom": "lib/"
     }
-  }
+  },
+  "extra": {
+    "branch-alias": {
+      "master": "dev"
+    }
+  },
+  "minimum-stability": "dev"
 }
