@@ -1,5 +1,5 @@
 {
-  "name": "darkin1/Intercom",
+  "name": "darkin1/intercom",
   "description": "Wrapper on the Intercom class provided by Intercom - with support for Laravel 5.x",
   "keywords": ["laravel", "intercom"],
   "license": "MIT",
