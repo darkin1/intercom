@@ -1,0 +1,20 @@
+{
+  "name": "darkin1/Intercom",
+  "description": "Wrapper on the Intercom class provided by Intercom - with support for Laravel 5.x",
+  "keywords": ["laravel", "intercom"],
+  "license": "MIT",
+  "authors": [{
+    "name": "Dariusz Ciesielski",
+    "email": "dciesielski87@gmail.com"
+  }],
+  "require": {
+    "php": ">=5.3.0",
+    "illuminate/support": "4.*|5.0.*",
+    "intercom/intercom-php": "1.5.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Darkin1\\Intercom": "lib/"
+    }
+  }
+}
