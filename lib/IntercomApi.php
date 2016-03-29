@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Custom\Intercom;
+namespace Darkin1\Intercom;
 
 use Intercom\IntercomBasicAuthClient;
 

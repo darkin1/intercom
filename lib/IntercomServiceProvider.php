@@ -6,7 +6,7 @@
  * Time: 13:40
  */
 
-namespace App\Custom\Intercom;
+namespace Darkin1\Intercom;
 
 
 use Illuminate\Support\ServiceProvider;
