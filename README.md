@@ -22,7 +22,7 @@ App\Custom\Intercom\IntercomServiceProvider::class,
 Configuration
 -------------
 
-Change your default database connection name in `app/config/intercom.php`:
+Change your default settings in `app/config/intercom.php`:
 
 ```php
 <?php
