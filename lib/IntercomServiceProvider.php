@@ -1,13 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dariusz
- * Date: 26.03.16
- * Time: 13:40
- */
-
 namespace Darkin1\Intercom;
-
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Config;

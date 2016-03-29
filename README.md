@@ -16,7 +16,7 @@ composer require darkin1/intercom
 And add the service provider in `config/app.php`:
 
 ```php
-App\Custom\Intercom\IntercomServiceProvider::class,
+Darkin1\Intercom\IntercomServiceProvider::class,,
 ```
 
 Configuration
@@ -31,3 +31,10 @@ return [
     'api_key' => env('INTERCOM_API_KEY', '********'),
 ];
 ```
+
+
+Documentation
+-------------
+
+[Intercom API](https://github.com/intercom/intercom-php)
+
