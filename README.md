@@ -1,9 +1,7 @@
 Intercom
 ===============
 
-[![Latest Stable Version](http://img.shields.io/github/release/darkin1/intercom.svg)](https://packagist.org/packages/darkin1/intercom) 
-
-[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://www.paypal.me/dciesielski)
+[![Latest Stable Version](http://img.shields.io/github/release/darkin1/intercom.svg)](https://packagist.org/packages/darkin1/intercom) [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg)](https://www.paypal.me/dciesielski)
 
 
 Wrapper on the Intercom class provided by Intercom  - with support for Laravel 5.x
