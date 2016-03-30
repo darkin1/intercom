@@ -19,7 +19,7 @@ composer require darkin1/intercom
 And add the service provider in `config/app.php`:
 
 ```php
-Darkin1\Intercom\IntercomServiceProvider::class,,
+Darkin1\Intercom\IntercomServiceProvider::class,
 ```
 
 Configuration
