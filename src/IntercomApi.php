@@ -1,5 +1,4 @@
 <?php
-
 namespace Darkin1\Intercom;
 
 use Intercom\IntercomClient;

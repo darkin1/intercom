@@ -1,4 +1,4 @@
-    <?php
+<?php
 namespace Darkin1\Intercom;
 
 use Illuminate\Support\ServiceProvider;
