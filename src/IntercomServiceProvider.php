@@ -1,9 +1,10 @@
-<?php
+    <?php
 namespace Darkin1\Intercom;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Config;
-use Intercom\IntercomBasicAuthClient;
+use Intercom\IntercomClient;
+
 class IntercomServiceProvider extends ServiceProvider
 {
 
@@ -14,13 +15,16 @@ class IntercomServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('intercom', function () {
-            $intercom = IntercomBasicAuthClient::factory([
-                'app_id' => Config::get('intercom.app_id'),
-                'api_key' => Config::get('intercom.api_key'),
-            ]);
+        // Don't register intercom if it is not configured.
+        if (! getenv('INTERCOM_APP_ID') && ! getenv('INTERCOM_APP_KEY') && ! $this->app['config']->get('services.intercom')) {
+            return;
+        }
 
-            return new IntercomApi($intercom);
+        $this->app->bind('intercom', function () {
+            $appID  = getenv('INTERCOM_APP_ID')  ?: $app['config']->get('services.intercom.app_id');
+            $apiKey = getenv('INTERCOM_APP_KEY') ?: $app['config']->get('services.intercom.api_key');
+
+            return new IntercomClient($appID, $apiKey);
         });
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Darkin1\Intercom;
 
-use Intercom\IntercomBasicAuthClient;
+use Intercom\IntercomClient;
 
 /**
  * Class IntercomApi
@@ -18,7 +18,7 @@ class IntercomApi
     /**
      * @param $intercom
      */
-    public function __construct(IntercomBasicAuthClient $intercom)
+    public function __construct(IntercomClient $intercom)
     {
         $this->intercom = $intercom;
     }
