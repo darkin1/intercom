@@ -1,4 +1,4 @@
-    <?php
+<?php
 namespace Darkin1\Intercom;
 
 use Illuminate\Support\ServiceProvider;
@@ -7,7 +7,25 @@ use Intercom\IntercomClient;
 
 class IntercomServiceProvider extends ServiceProvider
 {
+    /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+    protected $defer = true;
 
+    /**
+     * Bootstrap the application events.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        // Allow users to publish config to override the defaults.
+        $this->publishes([
+            __DIR__.'/../config/intercom.php' => config_path('intercom.php'),
+        ], 'darkin1/intercom');
+    }
     /**
      * Register the service provider.
      *
@@ -15,16 +33,28 @@ class IntercomServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Don't register intercom if it is not configured.
-        if (! env('INTERCOM_APP_ID') && ! env('INTERCOM_APP_KEY') && ! $this->app['config']->get('services.intercom')) {
-            return;
-        }
+        // Use the provided config as default.
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/intercom.php', 'intercom'
+        );
 
-        $this->app->bind('intercom', function () {
-            $appID  = env('INTERCOM_APP_ID')  ?: $app['config']->get('services.intercom.app_id');
-            $apiKey = env('INTERCOM_APP_KEY') ?: $app['config']->get('services.intercom.api_key');
+        $this->app->singleton('intercom', function ($app) {
+            $appID  = $app['config']->get('intercom.app_id');
+            $apiKey = $app['config']->get('intercom.api_key');
 
-            return new IntercomClient($appID, $apiKey);
+            $intercom = new IntercomClient($appID, $apiKey);
+
+            return new IntercomApi($intercom);
         });
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return array('intercom');
     }
 }
