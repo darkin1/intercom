@@ -1,8 +1,7 @@
 <?php
-
 namespace Darkin1\Intercom;
 
-use Intercom\IntercomBasicAuthClient;
+use Intercom\IntercomClient;
 
 /**
  * Class IntercomApi
@@ -18,7 +17,7 @@ class IntercomApi
     /**
      * @param $intercom
      */
-    public function __construct(IntercomBasicAuthClient $intercom)
+    public function __construct($intercom)
     {
         $this->intercom = $intercom;
     }
@@ -32,7 +31,7 @@ class IntercomApi
      */
     public function __call($method, array $args)
     {
-        return call_user_func_array([$this->intercom, $method], $args);
+        return $this->intercom->{$method};
     }
 
 }
