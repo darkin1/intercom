@@ -22,6 +22,12 @@ And add the service provider in `config/app.php`:
 Darkin1\Intercom\IntercomServiceProvider::class,
 ```
 
+And add the facade alias in `config/app.php`:
+
+```php
+'Intercom'  => Darkin1\Intercom\Facades\Intercom::class,
+```
+
 Configuration
 -------------
 
@@ -33,6 +39,20 @@ return [
     'app_id' => env('INTERCOM_APP_ID', '****'),
     'api_key' => env('INTERCOM_API_KEY', '********'),
 ];
+```
+
+
+Example
+-------------
+
+```php
+
+use Intercom;
+
+$users = Intercom::users()->getUsers([]);
+
+$leads = Intercom::leads()->getLeads([]);
+
 ```
 
 
