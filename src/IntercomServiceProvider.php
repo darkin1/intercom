@@ -4,6 +4,7 @@ namespace Darkin1\Intercom;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Config;
 use Intercom\IntercomClient;
+use Darkin1\Intercom\Facades\Intercom;
 
 class IntercomServiceProvider extends ServiceProvider
 {
@@ -45,6 +46,11 @@ class IntercomServiceProvider extends ServiceProvider
             $intercom = new IntercomClient($appID, $apiKey);
 
             return new IntercomApi($intercom);
+        });
+
+        $this->app->booting(function () {
+            $loader = AliasLoader::getInstance();
+            $loader->alias('Intercom', Intercom::class);
         });
     }
 
