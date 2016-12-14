@@ -1,10 +1,11 @@
 <?php
+
 namespace Darkin1\Intercom;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Config;
-use Intercom\IntercomClient;
 use Darkin1\Intercom\Facades\Intercom;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\ServiceProvider;
+use Intercom\IntercomClient;
 
 class IntercomServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,7 @@ class IntercomServiceProvider extends ServiceProvider
             __DIR__.'/../config/intercom.php' => config_path('intercom.php'),
         ], 'darkin1/intercom');
     }
+
     /**
      * Register the service provider.
      *
@@ -40,7 +42,7 @@ class IntercomServiceProvider extends ServiceProvider
         );
 
         $this->app->singleton('intercom', function ($app) {
-            $appID  = $app['config']->get('intercom.app_id');
+            $appID = $app['config']->get('intercom.app_id');
             $apiKey = $app['config']->get('intercom.api_key');
 
             $intercom = new IntercomClient($appID, $apiKey);
@@ -61,6 +63,6 @@ class IntercomServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('intercom');
+        return ['intercom'];
     }
 }
