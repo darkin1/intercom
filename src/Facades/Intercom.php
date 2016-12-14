@@ -1,4 +1,5 @@
 <?php
+
 namespace Darkin1\Intercom\Facades;
 
 use Illuminate\Support\Facades\Facade;
