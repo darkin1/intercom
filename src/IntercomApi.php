@@ -1,11 +1,9 @@
 <?php
+
 namespace Darkin1\Intercom;
 
-use Intercom\IntercomClient;
-
 /**
- * Class IntercomApi
- * @package Darkin1\Intercom
+ * Class IntercomApi.
  */
 class IntercomApi
 {
@@ -22,7 +20,6 @@ class IntercomApi
         $this->intercom = $intercom;
     }
 
-
     /**
      * @param       $method
      * @param array $args
@@ -33,5 +30,4 @@ class IntercomApi
     {
         return $this->intercom->{$method};
     }
-
 }
