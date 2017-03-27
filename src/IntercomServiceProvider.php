@@ -42,10 +42,9 @@ class IntercomServiceProvider extends ServiceProvider
         );
 
         $this->app->singleton('intercom', function ($app) {
-            $appID = $app['config']->get('intercom.app_id');
-            $apiKey = $app['config']->get('intercom.api_key');
+            $accessToken = $app['config']->get('intercom.access_token');
 
-            $intercom = new IntercomClient($appID, $apiKey);
+            $intercom = new IntercomClient($accessToken, null);
 
             return new IntercomApi($intercom);
         });
