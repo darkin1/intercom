@@ -37,8 +37,7 @@ Change your default settings in `app/config/intercom.php`:
 ```php
 <?php
 return [
-    'app_id' => env('INTERCOM_APP_ID', '****'),
-    'api_key' => env('INTERCOM_API_KEY', '********'),
+    'access_token' => env('INTERCOM_ACCESS_TOKEN', '****'),
 ];
 ```
 
