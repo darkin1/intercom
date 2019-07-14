@@ -4,18 +4,11 @@ namespace Darkin1\Intercom;
 
 use Intercom\IntercomClient;
 use Darkin1\Intercom\Facades\Intercom;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
 
-class IntercomServiceProvider extends ServiceProvider
+class IntercomServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
     /**
      * Bootstrap the application events.
      *
