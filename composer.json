@@ -9,8 +9,9 @@
   }],
   "require": {
     "php": ">= 7.1",
-    "intercom/intercom-php": "^3.0",
-    "illuminate/support": "5.8.*|5.9.*"
+    "intercom/intercom-php": "^4.0",
+    "illuminate/support": "5.8.*|5.9.*",
+    "php-http/guzzle6-adapter": "^2.0"
   },
   "autoload": {
     "psr-4": {
