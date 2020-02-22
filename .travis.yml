@@ -2,6 +2,6 @@ language: php
 
 php:
   - 5.6
-  - 7.0
+  - 7.1
 
 script: phpunit --configuration phpunit.xml --coverage-text
