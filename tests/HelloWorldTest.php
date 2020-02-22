@@ -10,11 +10,11 @@ if (! class_exists('\PHPUnit\Framework\TestCase') && class_exists('\PHPUnit_Fram
  */
 class HelloWorldTest extends \PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
     }
 
-    public function testHelloWorld()
+    public function testHelloWorld(): void
     {
         $this->assertEquals('Hello World', 'Hello World');
     }
