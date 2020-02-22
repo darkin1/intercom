@@ -2,10 +2,10 @@
 
 namespace Darkin1\Intercom;
 
-use Intercom\IntercomClient;
 use Darkin1\Intercom\Facades\Intercom;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
+use Illuminate\Support\ServiceProvider;
+use Intercom\IntercomClient;
 
 class IntercomServiceProvider extends ServiceProvider implements DeferrableProvider
 {
