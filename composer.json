@@ -1,6 +1,6 @@
 {
   "name": "darkin1/intercom",
-  "description": "Wrapper on the Intercom class provided by Intercom - with support for Laravel 5.x",
+  "description": "Wrapper on the Intercom class provided by Intercom - with support for Laravel 5.x, 6.x, 7.x",
   "keywords": ["laravel", "intercom", "intercom.io", "api", "guzzle"],
   "license": "MIT",
   "authors": [{
