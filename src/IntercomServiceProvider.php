@@ -37,7 +37,9 @@ class IntercomServiceProvider extends ServiceProvider implements DeferrableProvi
         $this->app->singleton('intercom', function ($app) {
             $accessToken = $app['config']->get('intercom.access_token');
 
-            $intercom = new IntercomClient($accessToken, null);
+            $intercom = new IntercomClient($accessToken, null, [
+                'Intercom-Version' => $app['config']->get('intercom.api_version')
+            ]);
 
             return new IntercomApi($intercom);
         });
