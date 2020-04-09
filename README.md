@@ -42,6 +42,7 @@ return [
 ];
 ```
 
+Review the official docs to see the list of [available intercom api versions](https://developers.intercom.com/intercom-api-reference/reference)
 
 Example
 -------------
