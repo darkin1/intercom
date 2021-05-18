@@ -8,10 +8,10 @@
     "email": "dciesielski87@gmail.com"
   }],
   "require": {
-    "php": ">= 7.1",
+    "php": ">= 7.3",
     "intercom/intercom-php": "^4.0",
-    "illuminate/support": "^5.8|^6.0|^7.0",
-    "php-http/guzzle6-adapter": "^2.0"
+    "illuminate/support": "^5.8|^6.0|^7.0|^8.0",
+    "guzzlehttp/psr7": "^1.7.0"
   },
   "autoload": {
     "psr-4": {
